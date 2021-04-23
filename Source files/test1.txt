@@ -1,0 +1,8 @@
+procedure A;
+	var y;
+	begin
+		y := 12;
+	end;
+begin
+	call A;
+end.

@@ -1,0 +1,49 @@
+var x, y, z, v, w;
+procedure a;
+	var x, y, u, v;
+	procedure b;
+		var y, z, v;
+		procedure c;
+			var y, z;
+			begin
+				z := 1;
+				x := y+z+w
+			end;
+		begin
+			y:=x+u+w;
+			call c
+		end;
+	begin
+		z:= 2;
+		u:=z+w;
+		call b
+	end;
+procedure A;
+	var F, N;
+	procedure FACT;
+		var ANS1;
+		begin
+			ANS1 := N;
+			N := N - 1;
+			if N = 0 then F := 1;
+			if N > 0 then call FACT;
+			F := F * ANS1;
+		end;
+	begin
+		N := 3;
+		call FACT;
+		write F;
+	end;
+procedure poly (variable);
+	var total;
+	begin
+		return (variable * variable + variable * 2 + 9);
+	end;
+begin
+	y :=2; z:=3;v:=4; w:=5;
+	x:= v+w;
+	write z;
+	call a;
+	call A;
+	v := 4 * call poly (x * z);
+end.

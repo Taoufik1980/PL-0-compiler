@@ -1,6 +1,7 @@
-# PL-0-compiler
+Taoufik Laaroussi 
+4/16/2021
 
-# How to Compile and Execute the Program:
+How to Compile and Execute the Program:
 
 1. Compile using the following command: "make" (DO NOT include the quotation marks)
    A file named "a.out" is generated.

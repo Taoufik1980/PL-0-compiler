@@ -1,0 +1,53 @@
+Lexeme Table:
+lexeme          token type
+  procedure     30
+          A     2
+          ;     18
+        var     29
+          y     2
+          ;     18
+      begin     21
+          y     2
+         :=     20
+         12     3
+          ;     18
+        end     22
+          ;     18
+      begin     21
+       call     27
+          A     2
+          ;     18
+        end     22
+          .     19
+
+Token List:
+30 2 A 18 29 2 y 18 21 2 y 20 3 12 18 22 18 21 27 2 A 18 22 19 
+
+
+Generated Assembly:
+Line    OP    L    M
+  0    JMP    0    7
+  1    JMP    0    2
+  2    INC    0    5
+  3    LIT    0   12
+  4    STO    0    4
+  5    LIT    0    0
+  6    OPR    0    0
+  7    INC    0    4
+  8    LIT    0    0
+  9    CAL    0    2
+ 10    SYS    0    3
+
+
+                PC   BP   SP   stack
+Initial values: 0    0    -1   
+ 0 JMP  0  7     7    0   -1  
+ 7 INC  0  4     8    0    3   0 0 0 0
+ 8 LIT  0  0     9    0    4   0 0 0 0 0
+ 9 CAL  0  2     2    5    4   0 0 0 0 0
+ 2 INC  0  5     3    5    9   0 0 0 0 0 | 0 0 10 0 0
+ 3 LIT  0 12     4    5   10   0 0 0 0 0 | 0 0 10 0 0 12
+ 4 STO  0  4     5    5    9   0 0 0 0 0 | 0 0 10 0 12
+ 5 LIT  0  0     6    5   10   0 0 0 0 0 | 0 0 10 0 12 0
+ 6 OPR  0  0    10    0    4   0 0 0 0 0
+10 SYS  0  3    11    0    4   0 0 0 0 0
